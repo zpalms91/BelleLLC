@@ -1,8 +1,6 @@
-﻿using Microsoft.Owin;
-using Owin;
+﻿using Owin;
 
-[assembly: OwinStartupAttribute(typeof(BelleEssense.UI.Startup))]
-namespace BelleEssense.UI
+namespace IdentitySample
 {
     public partial class Startup
     {

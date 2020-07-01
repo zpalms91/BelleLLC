@@ -1,0 +1,6 @@
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\bin\Debug\BelleEssense.DATA.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\bin\Debug\BelleEssense.DATA.pdb
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\obj\Debug\BelleEssense.DATA.csprojAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\obj\Debug\BelleEssense.DATA.csproj.CoreCompileInputs.cache
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\obj\Debug\BelleEssense.DATA.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\obj\Debug\BelleEssense.DATA.pdb
