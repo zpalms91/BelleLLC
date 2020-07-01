@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="031a401b3cb64e54b3b2e7da39844dd5" Name="Diagram1">
+        <EntityTypeShape EntityType="BelleLLCModel.AspNetUser" Width="1.5" PointX="8.125" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BelleLLCModel.Candle" Width="1.5" PointX="2.625" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BelleLLCModel.Label" Width="1.5" PointX="4.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BelleLLCModel.Lotion" Width="1.5" PointX="6.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="BelleLLCModel.Product" Width="1.5" PointX="4.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BelleLLCModel.Scent" Width="1.5" PointX="4.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BelleLLCModel.Size" Width="1.5" PointX="4.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BelleLLCModel.User" Width="1.5" PointX="8.125" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="BelleLLCModel.FK_Candles_Labels" ManuallyRouted="false" />
+        <AssociationConnector Association="BelleLLCModel.FK_Candles_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="BelleLLCModel.FK_Candles_Scents" ManuallyRouted="false" />
+        <AssociationConnector Association="BelleLLCModel.FK_Candles_Sizes" ManuallyRouted="false" />
+        <AssociationConnector Association="BelleLLCModel.FK_Lotions_Labels" ManuallyRouted="false" />
+        <AssociationConnector Association="BelleLLCModel.FK_Lotions_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="BelleLLCModel.FK_Lotions_Scents" ManuallyRouted="false" />
+        <AssociationConnector Association="BelleLLCModel.FK_Lotions_Sizes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

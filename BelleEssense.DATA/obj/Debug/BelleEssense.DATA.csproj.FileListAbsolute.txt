@@ -4,3 +4,9 @@ C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense
 C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\obj\Debug\BelleEssense.DATA.csproj.CoreCompileInputs.cache
 C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\obj\Debug\BelleEssense.DATA.dll
 C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\obj\Debug\BelleEssense.DATA.pdb
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\bin\Debug\BelleEssense.DATA.dll.config
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\bin\Debug\EntityFramework.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\bin\Debug\EntityFramework.xml
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.DATA\obj\Debug\BelleEssense.DATA.csproj.CopyComplete

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BelleLLCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Candles">
+    <Key>
+      <PropertyRef Name="CandleId" />
+    </Key>
+    <Property Name="CandleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="ScentId" Type="int" Nullable="false" />
+    <Property Name="LabelId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="Discount" Type="real" Nullable="false" />
+    <Property Name="SizeId" Type="int" Nullable="false" />
+    <Property Name="IsFeatured" Type="bit" Nullable="false" />
+    <Property Name="Photo1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo3" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo4" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo5" Type="nvarchar" MaxLength="100" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Labels">
+    <Key>
+      <PropertyRef Name="LabelId" />
+    </Key>
+    <Property Name="LabelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lotions">
+    <Key>
+      <PropertyRef Name="LotionId" />
+    </Key>
+    <Property Name="LotionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="LabelId" Type="int" Nullable="false" />
+    <Property Name="ScentId" Type="int" Nullable="false" />
+    <Property Name="SizeId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="Discount" Type="real" Nullable="false" />
+    <Property Name="CBD" Type="bit" Nullable="false" />
+    <Property Name="MagOil" Type="bit" Nullable="false" />
+    <Property Name="IsFeatured" Type="bit" Nullable="false" />
+    <Property Name="Photo1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo3" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo4" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo5" Type="nvarchar" MaxLength="100" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Scents">
+    <Key>
+      <PropertyRef Name="ScentId" />
+    </Key>
+    <Property Name="ScentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Sizes">
+    <Key>
+      <PropertyRef Name="SizeId" />
+    </Key>
+    <Property Name="SizeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="30" />
+    <Property Name="State" Type="char" MaxLength="2" />
+    <Property Name="ZIP" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_Candles_Labels">
+    <End Role="Labels" Type="Self.Labels" Multiplicity="1" />
+    <End Role="Candles" Type="Self.Candles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Labels">
+        <PropertyRef Name="LabelId" />
+      </Principal>
+      <Dependent Role="Candles">
+        <PropertyRef Name="LabelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candles_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Candles" Type="Self.Candles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Candles">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candles_Scents">
+    <End Role="Scents" Type="Self.Scents" Multiplicity="1" />
+    <End Role="Candles" Type="Self.Candles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scents">
+        <PropertyRef Name="ScentId" />
+      </Principal>
+      <Dependent Role="Candles">
+        <PropertyRef Name="ScentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candles_Sizes">
+    <End Role="Sizes" Type="Self.Sizes" Multiplicity="1" />
+    <End Role="Candles" Type="Self.Candles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sizes">
+        <PropertyRef Name="SizeId" />
+      </Principal>
+      <Dependent Role="Candles">
+        <PropertyRef Name="SizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lotions_Labels">
+    <End Role="Labels" Type="Self.Labels" Multiplicity="1" />
+    <End Role="Lotions" Type="Self.Lotions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Labels">
+        <PropertyRef Name="LabelId" />
+      </Principal>
+      <Dependent Role="Lotions">
+        <PropertyRef Name="LabelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lotions_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Lotions" Type="Self.Lotions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Lotions">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lotions_Scents">
+    <End Role="Scents" Type="Self.Scents" Multiplicity="1" />
+    <End Role="Lotions" Type="Self.Lotions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scents">
+        <PropertyRef Name="ScentId" />
+      </Principal>
+      <Dependent Role="Lotions">
+        <PropertyRef Name="ScentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lotions_Sizes">
+    <End Role="Sizes" Type="Self.Sizes" Multiplicity="1" />
+    <End Role="Lotions" Type="Self.Lotions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sizes">
+        <PropertyRef Name="SizeId" />
+      </Principal>
+      <Dependent Role="Lotions">
+        <PropertyRef Name="SizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BelleLLCModelStoreContainer">
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Candles" EntityType="Self.Candles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Labels" EntityType="Self.Labels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lotions" EntityType="Self.Lotions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Scents" EntityType="Self.Scents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sizes" EntityType="Self.Sizes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Candles_Labels" Association="Self.FK_Candles_Labels">
+      <End Role="Labels" EntitySet="Labels" />
+      <End Role="Candles" EntitySet="Candles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candles_Products" Association="Self.FK_Candles_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Candles" EntitySet="Candles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candles_Scents" Association="Self.FK_Candles_Scents">
+      <End Role="Scents" EntitySet="Scents" />
+      <End Role="Candles" EntitySet="Candles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candles_Sizes" Association="Self.FK_Candles_Sizes">
+      <End Role="Sizes" EntitySet="Sizes" />
+      <End Role="Candles" EntitySet="Candles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lotions_Labels" Association="Self.FK_Lotions_Labels">
+      <End Role="Labels" EntitySet="Labels" />
+      <End Role="Lotions" EntitySet="Lotions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lotions_Products" Association="Self.FK_Lotions_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Lotions" EntitySet="Lotions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lotions_Scents" Association="Self.FK_Lotions_Scents">
+      <End Role="Scents" EntitySet="Scents" />
+      <End Role="Lotions" EntitySet="Lotions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lotions_Sizes" Association="Self.FK_Lotions_Sizes">
+      <End Role="Sizes" EntitySet="Sizes" />
+      <End Role="Lotions" EntitySet="Lotions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
