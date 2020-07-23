@@ -1,24 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BelleLLCModelStoreContainer" CdmEntityContainer="BelleLLCEntities">
-    <EntitySetMapping Name="AspNetUsers">
-      <EntityTypeMapping TypeName="BelleLLCModel.AspNetUser">
-        <MappingFragment StoreEntitySet="AspNetUsers">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
-          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
-          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
-          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
-          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
-          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
-          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="BelleLLCModelStoreContainer" CdmEntityContainer="BelleLLCEntities1">
     <EntitySetMapping Name="Candles">
       <EntityTypeMapping TypeName="BelleLLCModel.Candle">
         <MappingFragment StoreEntitySet="Candles">
@@ -43,7 +25,7 @@
       <EntityTypeMapping TypeName="BelleLLCModel.Label">
         <MappingFragment StoreEntitySet="Labels">
           <ScalarProperty Name="LabelId" ColumnName="LabelId" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LabelDesc" ColumnName="LabelDesc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -57,8 +39,8 @@
           <ScalarProperty Name="SizeId" ColumnName="SizeId" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="CBD" ColumnName="CBD" />
-          <ScalarProperty Name="MagOil" ColumnName="MagOil" />
+          <ScalarProperty Name="AddCBD" ColumnName="AddCBD" />
+          <ScalarProperty Name="AddMagOil" ColumnName="AddMagOil" />
           <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
           <ScalarProperty Name="Photo1" ColumnName="Photo1" />
           <ScalarProperty Name="Photo2" ColumnName="Photo2" />
@@ -73,8 +55,8 @@
       <EntityTypeMapping TypeName="BelleLLCModel.Product">
         <MappingFragment StoreEntitySet="Products">
           <ScalarProperty Name="TypeId" ColumnName="TypeId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductDesc" ColumnName="ProductDesc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -82,8 +64,8 @@
       <EntityTypeMapping TypeName="BelleLLCModel.Scent">
         <MappingFragment StoreEntitySet="Scents">
           <ScalarProperty Name="ScentId" ColumnName="ScentId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ScentName" ColumnName="ScentName" />
+          <ScalarProperty Name="ScentDesc" ColumnName="ScentDesc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -91,7 +73,7 @@
       <EntityTypeMapping TypeName="BelleLLCModel.Size">
         <MappingFragment StoreEntitySet="Sizes">
           <ScalarProperty Name="SizeId" ColumnName="SizeId" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SizeDesc" ColumnName="SizeDesc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

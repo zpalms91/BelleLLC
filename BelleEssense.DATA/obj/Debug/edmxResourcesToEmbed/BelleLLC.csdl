@@ -1,22 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BelleLLCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="AspNetUser">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
-    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
-    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
-    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
-    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
-    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
-    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityType Name="Candle">
     <Key>
       <PropertyRef Name="CandleId" />
@@ -45,7 +28,7 @@
       <PropertyRef Name="LabelId" />
     </Key>
     <Property Name="LabelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LabelDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Candles" Relationship="Self.FK_Candles_Labels" FromRole="Labels" ToRole="Candles" />
     <NavigationProperty Name="Lotions" Relationship="Self.FK_Lotions_Labels" FromRole="Labels" ToRole="Lotions" />
   </EntityType>
@@ -60,8 +43,8 @@
     <Property Name="SizeId" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="Discount" Type="Single" Nullable="false" />
-    <Property Name="CBD" Type="Boolean" Nullable="false" />
-    <Property Name="MagOil" Type="Boolean" Nullable="false" />
+    <Property Name="AddCBD" Type="Boolean" Nullable="false" />
+    <Property Name="AddMagOil" Type="Boolean" Nullable="false" />
     <Property Name="IsFeatured" Type="Boolean" Nullable="false" />
     <Property Name="Photo1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Photo2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -79,8 +62,8 @@
       <PropertyRef Name="TypeId" />
     </Key>
     <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Candles" Relationship="Self.FK_Candles_Products" FromRole="Products" ToRole="Candles" />
     <NavigationProperty Name="Lotions" Relationship="Self.FK_Lotions_Products" FromRole="Products" ToRole="Lotions" />
   </EntityType>
@@ -89,8 +72,8 @@
       <PropertyRef Name="ScentId" />
     </Key>
     <Property Name="ScentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ScentName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ScentDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Candles" Relationship="Self.FK_Candles_Scents" FromRole="Scents" ToRole="Candles" />
     <NavigationProperty Name="Lotions" Relationship="Self.FK_Lotions_Scents" FromRole="Scents" ToRole="Lotions" />
   </EntityType>
@@ -99,7 +82,7 @@
       <PropertyRef Name="SizeId" />
     </Key>
     <Property Name="SizeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SizeDesc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Candles" Relationship="Self.FK_Candles_Sizes" FromRole="Sizes" ToRole="Candles" />
     <NavigationProperty Name="Lotions" Relationship="Self.FK_Lotions_Sizes" FromRole="Sizes" ToRole="Lotions" />
   </EntityType>
@@ -213,8 +196,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="BelleLLCEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+  <EntityContainer Name="BelleLLCEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Candles" EntityType="Self.Candle" />
     <EntitySet Name="Labels" EntityType="Self.Label" />
     <EntitySet Name="Lotions" EntityType="Self.Lotion" />

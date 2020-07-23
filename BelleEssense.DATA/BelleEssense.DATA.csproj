@@ -50,9 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AspNetUser.cs">
-      <DependentUpon>BelleLLC.tt</DependentUpon>
-    </Compile>
     <Compile Include="BelleLLC.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,13 +68,13 @@
     <Compile Include="Candle.cs">
       <DependentUpon>BelleLLC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Label.cs">
       <DependentUpon>BelleLLC.tt</DependentUpon>
     </Compile>
     <Compile Include="Lotion.cs">
       <DependentUpon>BelleLLC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Metadata.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>BelleLLC.tt</DependentUpon>
     </Compile>

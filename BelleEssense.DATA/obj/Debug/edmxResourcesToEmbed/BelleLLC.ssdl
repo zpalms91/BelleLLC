@@ -1,22 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BelleLLCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="AspNetUsers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="256" />
-    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
-    <Property Name="PasswordHash" Type="nvarchar(max)" />
-    <Property Name="SecurityStamp" Type="nvarchar(max)" />
-    <Property Name="PhoneNumber" Type="nvarchar(max)" />
-    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
-    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
-    <Property Name="LockoutEndDateUtc" Type="datetime" />
-    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
-    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
-  </EntityType>
   <EntityType Name="Candles">
     <Key>
       <PropertyRef Name="CandleId" />
@@ -41,7 +24,7 @@
       <PropertyRef Name="LabelId" />
     </Key>
     <Property Name="LabelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LabelDesc" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Lotions">
     <Key>
@@ -54,8 +37,8 @@
     <Property Name="SizeId" Type="int" Nullable="false" />
     <Property Name="Price" Type="money" Nullable="false" />
     <Property Name="Discount" Type="real" Nullable="false" />
-    <Property Name="CBD" Type="bit" Nullable="false" />
-    <Property Name="MagOil" Type="bit" Nullable="false" />
+    <Property Name="AddCBD" Type="bit" Nullable="false" />
+    <Property Name="AddMagOil" Type="bit" Nullable="false" />
     <Property Name="IsFeatured" Type="bit" Nullable="false" />
     <Property Name="Photo1" Type="nvarchar" MaxLength="100" />
     <Property Name="Photo2" Type="nvarchar" MaxLength="100" />
@@ -69,23 +52,23 @@
       <PropertyRef Name="TypeId" />
     </Key>
     <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ProductDesc" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Scents">
     <Key>
       <PropertyRef Name="ScentId" />
     </Key>
     <Property Name="ScentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ScentName" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="ScentDesc" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Sizes">
     <Key>
       <PropertyRef Name="SizeId" />
     </Key>
     <Property Name="SizeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SizeDesc" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -198,7 +181,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="BelleLLCModelStoreContainer">
-    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Candles" EntityType="Self.Candles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Labels" EntityType="Self.Labels" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Lotions" EntityType="Self.Lotions" Schema="dbo" store:Type="Tables" />
