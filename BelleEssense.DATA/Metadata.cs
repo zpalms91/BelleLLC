@@ -7,6 +7,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BelleEssense.DATA
 {
+    //[Required(ErrorMessage = "***REQUIRED***")]
+
     #region Users
     [MetadataType(typeof(UserMetadata))]
     public partial class User { }
@@ -51,13 +53,15 @@ namespace BelleEssense.DATA
 
     public class ProductMetadata
     {
+        [Display(Name = "Product Type")]
         [StringLength(30, ErrorMessage = "Product Name must be less than 30 characters")]
         [Required(ErrorMessage = "***REQUIRED***")]
-        public string Name { get; set; }
+        public string ProductName { get; set; }
 
+        [Display(Name = "Description")]
         [Required(ErrorMessage = "***REQUIRED***")]
         [UIHint("MultilineText")]
-        public string Description { get; set; }
+        public string ProductDesc { get; set; }
     }
     #endregion
 
@@ -72,14 +76,15 @@ namespace BelleEssense.DATA
         [Required(ErrorMessage = "***REQUIRED***")]
         public decimal Price { get; set; }
 
-        [Range(1, 100, ErrorMessage = "Enter a value between 1 and 100")]
+        [Range(0, 100, ErrorMessage = "Enter a value between 0 and 100")]
+        [Required(ErrorMessage = "***REQUIRED***")]
         public float Discount { get; set; }
 
         [Display(Name = "Add CBD?")]
-        public bool CBD { get; set; }
+        public bool AddCBD { get; set; }
 
         [Display(Name = "Add Magnesium Oil?")]
-        public bool MagOil { get; set; }
+        public bool AddMagOil { get; set; }
 
         [Display(Name = "Featured Item?")]
         public bool IsFeatured { get; set; }
@@ -121,7 +126,8 @@ namespace BelleEssense.DATA
         [Required(ErrorMessage = "***REQUIRED***")]
         public decimal Price { get; set; }
 
-        [Range(1, 100, ErrorMessage = "Enter a value between 1 and 100")]
+        [Range(0, 100, ErrorMessage = "Enter a value between 0 and 100")]
+        [Required(ErrorMessage = "***REQUIRED***")]
         public float Discount { get; set; }
 
         [Display(Name = "Featured Item?")]
@@ -161,9 +167,11 @@ namespace BelleEssense.DATA
     {
         [Display(Name = "Scent Name")]
         [StringLength(25, ErrorMessage = "Scent Name must be 25 characters or less")]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "***REQUIRED***")]
+        public string ScentName { get; set; }
 
-        public string Description { get; set; }
+        [Display(Name = "Description")]        
+        public string ScentDesc { get; set; }
     }
     #endregion
 
@@ -173,8 +181,10 @@ namespace BelleEssense.DATA
 
     public class LabelMetadata
     {
-
-        public string Description { get; set; }
+        [Display(Name = "Label Description")]
+        [StringLength(50, ErrorMessage = "Description must be 50 characters or less")]
+        [Required(ErrorMessage = "***REQUIRED***")]
+        public string LabelDesc { get; set; }
     }
     #endregion
 
@@ -184,8 +194,10 @@ namespace BelleEssense.DATA
 
     public class SizeMetadata
     {
-
-        public string Description { get; set; }
+        [Display(Name = "Size Description")]
+        [StringLength(10, ErrorMessage = "Description must be 10 characters or less")]
+        [Required(ErrorMessage = "***REQUIRED***")]
+        public string SizeDesc { get; set; }
     }    
     #endregion
 }
