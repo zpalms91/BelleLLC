@@ -21,8 +21,8 @@ namespace BelleEssense.DATA
         public int SizeId { get; set; }
         public decimal Price { get; set; }
         public float Discount { get; set; }
-        public bool CBD { get; set; }
-        public bool MagOil { get; set; }
+        public bool AddCBD { get; set; }
+        public bool AddMagOil { get; set; }
         public bool IsFeatured { get; set; }
         public string Photo1 { get; set; }
         public string Photo2 { get; set; }

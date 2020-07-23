@@ -22,7 +22,7 @@ namespace BelleEssense.DATA
         }
     
         public int SizeId { get; set; }
-        public string Description { get; set; }
+        public string SizeDesc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Candle> Candles { get; set; }

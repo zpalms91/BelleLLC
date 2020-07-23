@@ -13,10 +13,10 @@ namespace BelleEssense.DATA
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BelleLLCEntities : DbContext
+    public partial class BelleLLCEntities1 : DbContext
     {
-        public BelleLLCEntities()
-            : base("name=BelleLLCEntities")
+        public BelleLLCEntities1()
+            : base("name=BelleLLCEntities1")
         {
         }
     
@@ -25,7 +25,6 @@ namespace BelleEssense.DATA
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Candle> Candles { get; set; }
         public virtual DbSet<Label> Labels { get; set; }
         public virtual DbSet<Lotion> Lotions { get; set; }
