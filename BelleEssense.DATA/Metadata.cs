@@ -159,6 +159,8 @@ namespace BelleEssense.DATA
     }
     #endregion
 
+    //TODO Add Aromatherapy Jewelry table and metadata
+
     #region Scents
     [MetadataType(typeof(ScentMetadata))]
     public partial class Scent { }

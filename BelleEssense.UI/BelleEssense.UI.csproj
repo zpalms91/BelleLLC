@@ -168,10 +168,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CandlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LabelsController.cs" />
+    <Compile Include="Controllers\LotionsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\ScentsController.cs" />
+    <Compile Include="Controllers\SizesController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,6 +198,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\banner\categories-banner.jpg" />
     <Content Include="Content\img\banner\summer-banner.jpg" />
@@ -339,6 +347,7 @@
     <Content Include="Content\js\popper.min.js" />
     <Content Include="Content\js\smoothscroll.js" />
     <Content Include="Content\js\theme.js" />
+    <Content Include="Content\Logo.png" />
     <Content Include="Content\vendors\bootstrap-selector\css\bootstrap-select.min.css" />
     <Content Include="Content\vendors\bootstrap-selector\js\bootstrap-select.min.js" />
     <Content Include="Content\vendors\counterup\apear.js" />
@@ -935,6 +944,41 @@
     <Content Include="_archive\persuit\vendors\revolution\fonts\revicons\revicons.woff" />
     <Content Include="_archive\persuit\vendors\revolution\info.cfg" />
     <Content Include="Views\Shared\_OriginalLayout.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Lotions\Create.cshtml" />
+    <Content Include="Views\Lotions\Delete.cshtml" />
+    <Content Include="Views\Lotions\Details.cshtml" />
+    <Content Include="Views\Lotions\Edit.cshtml" />
+    <Content Include="Views\Lotions\Index.cshtml" />
+    <Content Include="Views\Candles\Create.cshtml" />
+    <Content Include="Views\Candles\Delete.cshtml" />
+    <Content Include="Views\Candles\Details.cshtml" />
+    <Content Include="Views\Candles\Edit.cshtml" />
+    <Content Include="Views\Candles\Index.cshtml" />
+    <Content Include="Views\Scents\Create.cshtml" />
+    <Content Include="Views\Scents\Delete.cshtml" />
+    <Content Include="Views\Scents\Details.cshtml" />
+    <Content Include="Views\Scents\Edit.cshtml" />
+    <Content Include="Views\Scents\Index.cshtml" />
+    <Content Include="Views\Labels\Create.cshtml" />
+    <Content Include="Views\Labels\Delete.cshtml" />
+    <Content Include="Views\Labels\Details.cshtml" />
+    <Content Include="Views\Labels\Edit.cshtml" />
+    <Content Include="Views\Labels\Index.cshtml" />
+    <Content Include="Views\Sizes\Create.cshtml" />
+    <Content Include="Views\Sizes\Delete.cshtml" />
+    <Content Include="Views\Sizes\Details.cshtml" />
+    <Content Include="Views\Sizes\Edit.cshtml" />
+    <Content Include="Views\Sizes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -951,6 +995,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BelleEssense.DATA\BelleEssense.DATA.csproj">
+      <Project>{aa4bdafb-b420-4445-b67f-dd22c5213354}</Project>
+      <Name>BelleEssense.DATA</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
