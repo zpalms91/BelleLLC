@@ -37,6 +37,7 @@ namespace BelleEssense.UI.Controllers
         }
 
         // GET: Candles/Create
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Create()
         {
             ViewBag.LabelId = new SelectList(db.Labels, "LabelId", "LabelDesc");
@@ -68,6 +69,7 @@ namespace BelleEssense.UI.Controllers
         }
 
         // GET: Candles/Edit/5
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -107,6 +109,7 @@ namespace BelleEssense.UI.Controllers
         }
 
         // GET: Candles/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -122,6 +125,7 @@ namespace BelleEssense.UI.Controllers
         }
 
         // POST: Candles/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

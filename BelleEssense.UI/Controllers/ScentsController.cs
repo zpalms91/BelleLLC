@@ -36,6 +36,7 @@ namespace BelleEssense.UI.Controllers
         }
 
         // GET: Scents/Create
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +60,7 @@ namespace BelleEssense.UI.Controllers
         }
 
         // GET: Scents/Edit/5
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +92,7 @@ namespace BelleEssense.UI.Controllers
         }
 
         // GET: Scents/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +108,7 @@ namespace BelleEssense.UI.Controllers
         }
 
         // POST: Scents/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
