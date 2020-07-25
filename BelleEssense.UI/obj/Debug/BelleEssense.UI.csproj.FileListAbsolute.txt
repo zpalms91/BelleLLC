@@ -103,3 +103,6 @@ C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense
 C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.UI\obj\Debug\BelleEssense.UI.csproj.CopyComplete
 C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.UI\obj\Debug\BelleEssense.UI.dll
 C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.UI\obj\Debug\BelleEssense.UI.pdb
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.UI\bin\BelleEssense.DATA.dll
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.UI\bin\BelleEssense.DATA.pdb
+C:\Users\Student\Documents\Visual Studio 2017\Projects\BelleLLC\src\BelleEssense.UI\bin\BelleEssense.DATA.dll.config
