@@ -200,6 +200,9 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\img\android-chrome-192x192.png" />
+    <Content Include="Content\img\android-chrome-512x512.png" />
+    <Content Include="Content\img\apple-touch-icon.png" />
     <Content Include="Content\img\banner\categories-banner.jpg" />
     <Content Include="Content\img\banner\summer-banner.jpg" />
     <Content Include="Content\img\blog\from-blog\f-blog-1.jpg" />
@@ -208,7 +211,9 @@
     <Content Include="Content\img\blog\from-blog\f-blog-4.jpg" />
     <Content Include="Content\img\blog\from-blog\f-blog-5.jpg" />
     <Content Include="Content\img\blog\from-blog\f-blog-6.jpg" />
-    <Content Include="Content\img\fav-icon.png" />
+    <Content Include="Content\img\favicon-16x16.png" />
+    <Content Include="Content\img\favicon-32x32.png" />
+    <Content Include="Content\img\favicon.ico" />
     <Content Include="Content\img\feature-add\f-add-1.jpg" />
     <Content Include="Content\img\feature-add\f-add-2.jpg" />
     <Content Include="Content\img\feature-add\f-add-3.jpg" />
@@ -236,6 +241,7 @@
     <Content Include="Content\img\home-slider\full-width-1.jpg" />
     <Content Include="Content\img\home-slider\slider-1.jpg" />
     <Content Include="Content\img\home-slider\slider-2.jpg" />
+    <Content Include="Content\img\home-slider\HomeImage.jpg" />
     <Content Include="Content\img\icon\cart-icon.png" />
     <Content Include="Content\img\icon\close-icon.png" />
     <Content Include="Content\img\icon\flag-1.png" />
@@ -243,8 +249,6 @@
     <Content Include="Content\img\icon\world-icon-2.png" />
     <Content Include="Content\img\icon\world-icon-3.png" />
     <Content Include="Content\img\icon\world-icon-4.png" />
-    <Content Include="Content\img\logo-white.png" />
-    <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\master-card.png" />
     <Content Include="Content\img\product\c-product-1.jpg" />
     <Content Include="Content\img\product\c-product-2.jpg" />
@@ -347,7 +351,7 @@
     <Content Include="Content\js\popper.min.js" />
     <Content Include="Content\js\smoothscroll.js" />
     <Content Include="Content\js\theme.js" />
-    <Content Include="Content\Logo.png" />
+    <Content Include="Content\img\Logo.png" />
     <Content Include="Content\vendors\bootstrap-selector\css\bootstrap-select.min.css" />
     <Content Include="Content\vendors\bootstrap-selector\js\bootstrap-select.min.js" />
     <Content Include="Content\vendors\counterup\apear.js" />
@@ -826,6 +830,7 @@
     <Content Include="Content\vendors\revolution\fonts\revicons\revicons.ttf" />
     <Content Include="Content\vendors\revolution\fonts\revicons\revicons.woff" />
     <Content Include="Content\vendors\revolution\info.cfg" />
+    <Content Include="Content\img\site.webmanifest" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
