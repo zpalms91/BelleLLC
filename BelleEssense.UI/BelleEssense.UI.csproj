@@ -249,7 +249,12 @@
     <Content Include="Content\img\icon\world-icon-2.png" />
     <Content Include="Content\img\icon\world-icon-3.png" />
     <Content Include="Content\img\icon\world-icon-4.png" />
+    <Content Include="Content\img\LotionWithPetals.jpg" />
     <Content Include="Content\img\master-card.png" />
+    <Content Include="Content\img\home-slider\MainPhoto.jpg" />
+    <Content Include="Content\img\CandleOnBook.jpg" />
+    <Content Include="Content\img\CandleOnBlanket.jpg" />
+    <Content Include="Content\img\FloralMilkBath.jpg" />
     <Content Include="Content\img\product\c-product-1.jpg" />
     <Content Include="Content\img\product\c-product-2.jpg" />
     <Content Include="Content\img\product\c-product-3.jpg" />
@@ -984,6 +989,8 @@
     <Content Include="Views\Sizes\Details.cshtml" />
     <Content Include="Views\Sizes\Edit.cshtml" />
     <Content Include="Views\Sizes\Index.cshtml" />
+    <Content Include="Views\Candles\CustomCandle.cshtml" />
+    <Content Include="Views\Lotions\CustomLotion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
