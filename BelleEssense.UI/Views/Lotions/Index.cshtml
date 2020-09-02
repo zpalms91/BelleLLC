@@ -1,117 +1,120 @@
 ﻿@model IEnumerable<BelleEssense.DATA.Lotion>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lotions";
 }
 
-<h2>Index</h2>
+<!--================Categories Banner Area =================-->
+<section class="categories_banner_area">
+    <div class="container">
+        <div class="c_banner_inner">
+            <h3></h3>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--================End Categories Banner Area =================-->
+<!--================Categories Product Area =================-->
+<section class="categories_product_main p_80">
+    <div class="container">
+        <div class="categories_main_inner">
+            <div class="row row_disable">
+                <div class="col-lg-12 float-md-right">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <p>
+                            @Html.ActionLink("Create New", "Create")
+                        </p>
+                    }
+                </div>
+                <div class="col-lg-12 float-md-right">
+                    @* Filters Bar *@
+                    <div class="showing_fillter">
+                        <div class="row m0">
+                            <div class="first_fillter">
+                                <h4>Showing 1 to 12 of 30 total</h4>
+                            </div>
+                            <div class="secand_fillter">
+                                <h4>SORT BY :</h4>
+                                <select class="selectpicker">
+                                    <option>Name</option>
+                                    <option>Name 2</option>
+                                    <option>Name 3</option>
+                                </select>
+                            </div>
+                            <div class="third_fillter">
+                                <h4>Show : </h4>
+                                <select class="selectpicker">
+                                    <option>09</option>
+                                    <option>10</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                            <div class="four_fillter">
+                                <h4>View</h4>
+                                <a class="active" href="#"><i class="icon_grid-2x2"></i></a>
+                                <a href="#"><i class="icon_grid-3x3"></i></a>
+                            </div>
+                        </div>
+                    </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Discount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AddCBD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AddMagOil)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsFeatured)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo5)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Notes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Label.LabelDesc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.ProductName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Scent.ScentName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size.SizeDesc)
-        </th>
-        <th></th>
-    </tr>
+                    @* Product List *@
+                    <div class="c_product_grid_details">
+                        @foreach (var item in Model)
+                        {
+                            <div class="c_product_item">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6">
+                                        @* TODO Add images to Candles *@
+                                        <div class="c_product_img" href="@Url.Action("Details", "Lotions", new { id = item.LotionId })">
+                                            <img class="img-fluid" src="~/Content/img/product/@Html.DisplayFor(modelitem => item.Photo1)" alt="@item.Scent.ScentName @item.Size.SizeDesc Lotion">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-6">
+                                        <div class="c_product_text">
+                                            @* TODO Fix link to Candle Details *@
+                                            <h3 href="@Url.Action("Details", "Lotions", new { id = item.LotionId })">@Html.DisplayFor(modelItem => item.Scent.ScentName) @Html.DisplayFor(modelItem => item.Size.SizeDesc) Lotion</h3>
+                                            <h5>@Html.DisplayFor(modelItem => item.Price)</h5>
+                                            @*<ul class="product_rating">
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                </ul>
+                                                <h6>Available In <span>Stock</span></h6>*@
+                                            <p>@Html.DisplayFor(modelItem => item.Notes)</p>
+                                            <ul class="c_product_btn">
+                                                @*<li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>*@
+                                                <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
+                                                <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Discount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddCBD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddMagOil)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsFeatured)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo5)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Notes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Label.LabelDesc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Scent.ScentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Size.SizeDesc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LotionId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LotionId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LotionId })
-        </td>
-    </tr>
-}
-
-</table>
+                        @* Pagination *@
+                        <nav aria-label="Page navigation example" class="pagination_area">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item next"><a class="page-link" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Categories Product Area =================-->

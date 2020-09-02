@@ -72,13 +72,13 @@
                                     <div class="col-lg-4 col-md-6">
                                         @* TODO Add images to Candles *@
                                         <div class="c_product_img" href="@Url.Action("Details", "Candles", new { id = item.CandleId })">
-                                            <img class="img-fluid" src="~/Content/img/product/@Html.DisplayFor(modelitem => item.Photo1)" alt="@item.Label.LabelDesc @item.Size.SizeDesc Candle">
+                                            <img class="img-fluid" src="~/Content/img/product/@Html.DisplayFor(modelitem => item.Photo1)" alt="@item.Scent.ScentName @item.Size.SizeDesc Candle">
                                         </div>
                                     </div>
                                     <div class="col-lg-8 col-md-6">
                                         <div class="c_product_text">
                                             @* TODO Fix link to Candle Details *@
-                                            <h3 href="@Url.Action("Details", "Candles", new { id = item.CandleId })">@Html.DisplayFor(modelItem => item.Label.LabelDesc) @Html.DisplayFor(modelItem => item.Size.SizeDesc) Candle</h3>
+                                            <h3 href="@Url.Action("Details", "Candles", new { id = item.CandleId })">@Html.DisplayFor(modelItem => item.Scent.ScentName) @Html.DisplayFor(modelItem => item.Size.SizeDesc) Candle</h3>
                                             <h5>@Html.DisplayFor(modelItem => item.Price)</h5>
                                             @*<ul class="product_rating">
                                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -120,98 +120,3 @@
 </section>
 <!--================End Categories Product Area =================-->
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Discount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsFeatured)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo5)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Notes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Label.LabelDesc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.ProductName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Scent.ScentName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size.SizeDesc)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsFeatured)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo4)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo5)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Label.LabelDesc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Scent.ScentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Size.SizeDesc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CandleId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CandleId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CandleId })
-            </td>
-        </tr>
-    }
-
-</table>
